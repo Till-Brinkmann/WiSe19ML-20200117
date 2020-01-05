@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt]{article}
+
+
+\usepackage{amssymb,amsmath,array}
+\usepackage{hyperref}
+\usepackage{bm}
+
+\usepackage[a4paper, left=3cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+% language and encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+% this package load language specific quotes and enables you to write
+% \enquote{text} instead of "`text"' or something like that.
+\usepackage{csquotes}
+\newcommand{\ts}{\textsuperscript}
+
+% Write initials inside the right margin
+\newcommand{\initials}[1]{\marginpar{\quad\texttt{#1}}}
+
+\title{Report of the 6\ts{th} exercise sheet}
+\author{First group member (FGM), Second group member (SGM), \and
+Third group member (TGM)}
+
+% could removed
+\date{Submission by 17\ts{th} January 2020}
+
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\pagestyle{myheadings}
+\markright{First group member, Second group member, Third group member}
+    
+\maketitle
+
+\begin{center}
+    \textbf{Tutorial: Monday 12-14, Tutor: tutor's name}
+\end{center}
+
+\section{Introduction}
+This is an template for a report. You may use the outline or change it freely. There are no directives.
+
+
+\section{Methods/Models}
+Which classifiers are used? How do they classify/differ?
+\initials{FGM}
+
+\section{Experiments}
+Which tests were done in the experiments? What was implemented? What measurement are used in the results?
+\subsection{Data}
+Which data are used? What are their characteristics?
+\initials{SGM}
+
+\subsection{Feature Extraction}
+Which features are generated for the experiments?
+\initials{TGM}
+
+\subsection{Awesome results}
+
+\begin{figure}[h]
+\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Results}
+\label{fig_res}
+\end{figure}
+
+
+You can refer to Figure~\ref{fig_res}.
+\begin{table}[h]
+\caption{An Example of a Table}
+\label{tab_example}
+\centering
+% Some packages, such as MDW tools, offer better commands for making tables
+% than the plain LaTeX2e tabular which is used here.
+\begin{tabular}{c||c|c|c}
+Data & Method 1 & Method 2 & Method 3\\
+\hline\hline
+data 1 &0.54 & 0.6& 0.98\\
+\hline
+data 2 &0.74 & 0.54& 0.48\\
+\hline
+data 3 &0.82 & 0.71& 0.67
+\end{tabular}
+\end{table}
+You can also refer to Table~\ref{tab_example}.
+\initials{FGM}
+
+\section{Discussion}
+Short summery and future work.
+\initials{SGM/TGM}
+
+\end{document}
