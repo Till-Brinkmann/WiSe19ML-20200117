@@ -1,10 +1,10 @@
 import numpy as np
 
 class NaiveBayesClassifier:
-    
+
     def __init__(self):
         pass
-    
+
     def fit(self,X,Y):
         #Pc is a dictionary mapping c to the probability P(Y=c)
         classes, occurence = np.unique(Y,return_counts=True)
@@ -23,18 +23,18 @@ class NaiveBayesClassifier:
             #self.xAvg[c] = np.vectorize(lambda x : 1 if x > 0.5 else 0)(self.xAvg[c])
             print("xAvg " + str(c) + ": " + str(self.xAvg[c]))
 
-    def predict(self,x): 
+    def predict(self,x):
         probability = {}
-        
+
         maxClass = None
         maxProb = 0
         for c in self.classes:
-            probability[c]=(1 - np.divide(np.sum(np.abs(np.subtract(x,self.xAvg[c]))), x.shape[0])) * self.Pc[c]
+            probability[c]=(1 - np.divide(np.sum(np.abs(np.subtract(x,self.xAvg[c]))), x.shape[0])) #* self.Pc[c]
             print(str(c) + " :" + str(probability[c]))
             if probability[c] > maxProb:
                maxProb = probability[c]
                maxClass = c
-        
+
         return maxClass
 
 
@@ -89,5 +89,3 @@ class KnnClassifier:
         for value in Vector:
             sum += np.power(value,Norm)
         return np.power(sum,(1/Norm))
-
-
