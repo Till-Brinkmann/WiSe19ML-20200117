@@ -19,8 +19,7 @@
 \newcommand{\initials}[1]{\marginpar{\quad\texttt{#1}}}
 
 \title{Report of the 6\ts{th} exercise sheet}
-\author{First group member (FGM), Second group member (SGM), \and
-Third group member (TGM)}
+\author{Marco Adamczyk (MA), Till Brinkmann (TB)}
 
 % could removed
 \date{Submission by 17\ts{th} January 2020}
@@ -31,67 +30,41 @@ Third group member (TGM)}
 \pagenumbering{gobble}
 
 \pagestyle{myheadings}
-\markright{First group member, Second group member, Third group member}
+\markright{Till Brinkmann, Marco Adamczyk}
     
 \maketitle
 
 \begin{center}
-    \textbf{Tutorial: Monday 12-14, Tutor: tutor's name}
+    \textbf{Tutorial: Tuesday 10-12, Tutor: Riza Velioglu}
 \end{center}
 
 \section{Introduction}
-This is an template for a report. You may use the outline or change it freely. There are no directives.
-
-
-\section{Methods/Models}
-Which classifiers are used? How do they classify/differ?
-\initials{FGM}
+\subsection{Dataset}
+The dataset consists of 896 pictures in 4 different classes. The pictures are 299 by 299 RGB-pixels big.\\
+All pictures are nature photographs and seem to be classified as 
+"forest" (class 0, 230 pictures), "stony mountains" (class 1, 412 pictures), "snowy mountains" (class 2, 126 pictures), "lake" (class 3, 128 pictures).
+Because class 1 has a lot more elements than the other, it could be necessary to balance the dataset. 
+\initials{}
+\subsection{Initial Features}
+TODO Features we tried first
+\initials{}
+\subsection{Methods/Models}
+TODO Which classifiers are used? How do they classify/differ? What are the hyperparameters?
+\initials{}
 
 \section{Experiments}
-Which tests were done in the experiments? What was implemented? What measurement are used in the results?
-\subsection{Data}
-Which data are used? What are their characteristics?
-\initials{SGM}
-
-\subsection{Feature Extraction}
-Which features are generated for the experiments?
-\initials{TGM}
-
-\subsection{Awesome results}
-
-\begin{figure}[h]
-\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-\caption{Results}
-\label{fig_res}
-\end{figure}
-
-
-You can refer to Figure~\ref{fig_res}.
-\begin{table}[h]
-\caption{An Example of a Table}
-\label{tab_example}
-\centering
-% Some packages, such as MDW tools, offer better commands for making tables
-% than the plain LaTeX2e tabular which is used here.
-\begin{tabular}{c||c|c|c}
-Data & Method 1 & Method 2 & Method 3\\
-\hline\hline
-data 1 &0.54 & 0.6& 0.98\\
-\hline
-data 2 &0.74 & 0.54& 0.48\\
-\hline
-data 3 &0.82 & 0.71& 0.67
-\end{tabular}
-\end{table}
-You can also refer to Table~\ref{tab_example}.
-\initials{FGM}
+TODO Which tests were done in the experiments? What was implemented? What measurement are used in the results?
+Which values were chosen for the hyperparameters?
+\initials{}
+\subsection{Results}
+TODO
+\initials{}
 
 \section{Discussion}
-Short summery and future work.
-\initials{SGM/TGM}
+TODO Short summary and future work.
+\initials{}
+\subsection{Additional Features}
+TODO
+\initials{}
 
 \end{document}
