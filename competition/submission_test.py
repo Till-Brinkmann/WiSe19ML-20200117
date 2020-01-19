@@ -1,6 +1,6 @@
 import numpy as np
 from submission import my_submission
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, f1_score
 
 def load_avp_dataset(file_path="avp_dataset.npz"):
     data = np.load(file_path)
@@ -26,3 +26,5 @@ y_test = y_split[1]
 y_pred = my_submission(X_train, y_train, X_test)
 
 print(classification_report(y_test,y_pred))
+
+print("F1-score (macro): " + str(f1_score(y_test, y_pred, average="macro")))

@@ -1,7 +1,7 @@
 import numpy as np
 from classification.classifier import NaiveBayesClassifier
 from classification.preprocessing import *
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, f1_score
 from starter import load_avp_dataset
 
 def pred_all(classifier, X_pred):
@@ -11,8 +11,8 @@ def pred_all(classifier, X_pred):
     return y_pred
 
 
-THRESHOLD_BRIGHTNESS = (256.0*3.0)/2.0
-THRESHOLD_DIFFERENCE = 500;
+THRESHOLD_BRIGHTNESS = (256*3.0)/2.5
+THRESHOLD_DIFFERENCE = 1000
 
 def extract_features(x):
     return np.append(extract_feature_highest_rgb(x), extract_feature_brightness_above_threshold(x, THRESHOLD_BRIGHTNESS))
@@ -20,6 +20,7 @@ def extract_features(x):
     #return np.append(extract_feature_local_difference(x, THRESHOLD_DIFFERENCE), extract_feature_brightness_above_threshold(x, THRESHOLD_BRIGHTNESS))
     #return extract_feature_brightness_above_threshold(x, THRESHOLD_BRIGHTNESS)
     #return extract_feature_highest_rgb(x)
+
 
 
 X, y = load_avp_dataset()
@@ -52,3 +53,5 @@ print("Test: " + str(y_test))
 print("Pred: " + str(y_pred))
 
 print(classification_report(y_test,y_pred))
+
+print("F1-score (macro): " + str(f1_score(y_test, y_pred, average="macro")))
