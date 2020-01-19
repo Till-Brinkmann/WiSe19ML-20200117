@@ -57,7 +57,7 @@ def extract_feature_highest_rgb(x):
             i += 3
     return feat
 
-def extract_feature_highest_rgb_diff(x):
+def extract_feature_highest_rgb_reordered(x):
     feat = np.zeros(x.shape[0]*x.shape[1]*3, dtype=np.uint8)
     g_offset = x.shape[0] * x.shape[1]
     b_offset = g_offset * 2
