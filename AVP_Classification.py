@@ -11,12 +11,15 @@ def pred_all(classifier, X_pred):
     return y_pred
 
 
-THRESHOLD_BRIGHTNESS = (256*3.0)/2.0
+THRESHOLD_BRIGHTNESS = (256.0*3.0)/2.0
+THRESHOLD_DIFFERENCE = 500;
 
 def extract_features(x):
+    return np.append(extract_feature_highest_rgb(x), extract_feature_brightness_above_threshold(x, THRESHOLD_BRIGHTNESS))
+    #return extract_feature_local_difference(x, THRESHOLD_DIFFERENCE)
+    #return np.append(extract_feature_local_difference(x, THRESHOLD_DIFFERENCE), extract_feature_brightness_above_threshold(x, THRESHOLD_BRIGHTNESS))
     #return extract_feature_brightness_above_threshold(x, THRESHOLD_BRIGHTNESS)
-    return extract_feature_highest_rgb(x)
-
+    #return extract_feature_highest_rgb(x)
 
 
 X, y = load_avp_dataset()
